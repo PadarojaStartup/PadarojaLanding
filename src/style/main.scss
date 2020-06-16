@@ -1,0 +1,227 @@
+@import 'environment';
+
+html {
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto-Regular, sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+@font-face {
+  font-family: Roboto-Light;
+  src: url(fonts/Roboto-Light.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Bold;
+  src: url(fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Medium;
+  src: url(fonts/Roboto-Medium.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Regular;
+  src: url(fonts/Roboto-Regular.ttf);
+}
+
+.bar {
+  @include inline-space(40px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+  &__item-container {
+    height: 20px;
+  }
+  &__item {
+    transform: rotate(45deg);
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    opacity: 0.5;
+    border: 2px solid $color-white;
+    &--active {
+      width: 20px;
+      height: 20px;
+      background-color: $color-white;
+      cursor: pointer;
+      border: none;
+      opacity: 1;
+    }
+  }
+  &__space {
+    height: 8px;
+  }
+  &__divider {
+    width: 2px;
+    height: 50px;
+    background-color: $color-white;
+    opacity: 0.2;
+  }
+}
+
+.page {
+  display: flex;
+  min-height: 100vh;
+  padding-left: 20vw;
+  padding-right: 20vw;
+  box-sizing: border-box;
+}
+
+.button {
+  padding: 10px 50px;
+  border-radius: $border-radius-base;
+  font-family: Roboto-Medium, sans-serif;
+  font-size: 32px;
+  line-height: 37px;
+  &--dark {
+    background-color: $color-blue-900;
+    color: $color-white;
+  }
+}
+
+.top-page {
+  padding-top: 150px;
+  background: url("./images/bg1.png") no-repeat center center;
+  &__header {
+    @include stack-space(80px);
+    font-size: 70px;
+    line-height: 100px;
+    font-family: Rubik-Bold, sans-serif;
+    color: $color-blue-900;
+  }
+  &__subheader {
+    @include stack-space(50px);
+    font-size: 24px;
+    line-height: 28px;
+    font-family: Roboto-Regular, sans-serif;
+    color: $color-blue-900;
+  }
+}
+
+.how-it-works-page {
+  background-color: $color-blue-900;
+  padding-top: 110px;
+  padding-bottom: 55px;
+  &__header {
+    @include stack-space(50px);
+    font-size: 60px;
+    line-height: 70px;
+    font-family: Roboto-Bold, sans-serif;
+    color: $color-white;
+  }
+  &__steps-container {
+
+  }
+  &__steps-line {
+    @include stack-space(40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__step {
+    @include inline-space(70px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 280px;
+  }
+  &__step-header {
+    font-size: 24px;
+    line-height: 28px;
+    font-family: Roboto-Bold, sans-serif;
+    color: $color-white;
+  }
+  &__step-subheader {
+    font-size: 19px;
+    line-height: 22px;
+    font-family: Roboto-Light, sans-serif;
+    color: $color-white;
+  }
+}
+
+.features-page {
+  padding-top: 120px;
+  padding-bottom: 90px;
+  background: url("./images/bg3.png") no-repeat center center;
+  &__header {
+    @include stack-space(60px);
+    font-size: 60px;
+    line-height: 70px;
+    font-family: Roboto-Bold, sans-serif;
+    color: $color-white;
+  }
+  &__items-line {
+    @include stack-space(60px);
+    display: flex;
+  }
+  &__item {
+    @include inline-space(60px);
+    border-radius: $border-radius-base;
+    background-color: $color-white;
+    width: 290px;
+    height: 250px;
+  }
+}
+
+.destinations-page {
+  padding-top: 75px;
+  padding-bottom: 90px;
+  background: url("./images/bg-europe.png") no-repeat center center;
+  &__header {
+    @include stack-space(40px);
+    font-size: 60px;
+    line-height: 70px;
+    font-family: Roboto-Bold, sans-serif;
+    color: $color-white;
+  }
+}
+
+.footer {
+  background-color: $color-blue-900;
+  padding: 30px 20vw 130px;
+  display: flex;
+  justify-content: space-between;
+  &__left {
+    img {
+      @include stack-space(120px);
+    }
+  }
+  &__right {
+    display: flex;
+  }
+  &__column {
+    @include inline-space(100px);
+    display: flex;
+    flex-direction: column;
+  }
+  &__label {
+    @include stack-space(12px);
+    color: $color-white;
+    font-family: Roboto-Medium, sans-serif;
+    font-size: 19px;
+    line-height: 22px;
+  }
+  &__link {
+
+  }
+}

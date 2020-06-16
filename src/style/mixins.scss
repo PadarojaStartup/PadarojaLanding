@@ -1,0 +1,31 @@
+@import 'variables';
+
+@mixin media-breakpoint-up($breakpoint) {
+  @media (min-width: $breakpoint + 1) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-down($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin inline-space($space) {
+  &:not(:last-child) {
+    margin-right: $space;
+  }
+}
+
+@mixin stack-space($space) {
+  &:not(:last-child) {
+    margin-bottom: $space;
+  }
+}
+
+@mixin ellipsis() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
